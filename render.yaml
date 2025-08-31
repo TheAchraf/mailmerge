@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: email-tracking-server
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements_free_hosting.txt
+    startCommand: gunicorn free_tracking_server:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.16
